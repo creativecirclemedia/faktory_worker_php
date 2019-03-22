@@ -71,7 +71,7 @@ class FaktoryClient
 
         $response = $this->readLine($socket);
 
-        if ($response !== "+HI {\"v\":\"1\"}\r\n") {
+        if ( !preg_match("/^\+HI/",$response) {
             throw new \Exception('Hi not received :(');
         }
 
